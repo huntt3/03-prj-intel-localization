@@ -1,0 +1,196 @@
+/* Add your CSS here */
+
+/* Intel Brand Color Scheme */
+:root {
+  /* Main Intel blue */
+  --intel-blue: #0071c5;
+  /* Lighter blue for backgrounds */
+  --intel-light-blue: #e6f2fa;
+  /* Dark blue for accents */
+  --intel-dark-blue: #003057;
+  /* White for contrast */
+  --intel-white: #ffffff;
+  /* Gray for subtle backgrounds */
+  --intel-gray: #f4f4f4;
+}
+
+body {
+  background: var(--intel-light-blue);
+  color: var(--intel-dark-blue);
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+  /* Use a blue gradient for Intel branding */
+  background: linear-gradient(70deg, #00aee6 0%, #0c5b97 100%);
+  color: var(--intel-white);
+  padding: 30px 0 30px 0;
+  text-align: center;
+  font-size: 1.4em;
+  
+}
+
+header img {
+  max-width: 120px;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  color: var(--intel-gray);
+  font-size: 3em;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  color: var(--intel-dark-blue);
+}
+
+/* Allow the main heading to wrap onto multiple lines */
+header h1,
+header .main-heading {
+  white-space: normal;
+  word-break: break-word;
+  display: block;
+  margin: 0 auto 12px auto;
+  max-width: 90vw;
+}
+
+header p {
+  /* Allow the subheading to wrap as well */
+  white-space: normal;
+  word-break: break-word;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5em;
+}
+
+/* Carousel container styles */
+.carousel {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  /* Allows horizontal scrolling if content is too wide */
+  overflow-x: auto;
+  /* Adds some space below the carousel */
+  margin-bottom: 20px;
+  /* Adds a little padding for better look */
+  padding-bottom: 10px;
+  /* Enable scroll snap for smooth card snapping */
+  scroll-snap-type: x mandatory;
+  background: var(--intel-gray);
+  border-radius: 12px;
+  padding: 20px 0 20px 10px;
+}
+
+/* Each card in the carousel */
+.card {
+  /* Flex item for flexbox */
+  flex: 0 0 24.5%; /* Show 4 cards at a time (100% / 4 = 25%) */
+  /* Add some space between cards */
+  margin-right: .75%;
+  /* Add a border and background for visibility */
+  border: 2.5px solid var(--intel-blue);
+  background: var(--intel-white);
+  /* Rounded corners */
+  border-radius: 8px;
+  /* Add some padding inside the card */
+  padding: 10px;
+  /* Align cards to the top */
+  vertical-align: top;
+  /* Simple box shadow for effect */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+  /* Make sure text wraps inside the card */
+  white-space: normal;
+  /* Enable scroll snap for each card */
+  scroll-snap-align: start;
+  /* Set min-width for better mobile support */
+  min-width: 220px;
+  box-sizing: border-box;
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden; /* Hide overlay outside card */
+  color: var(--intel-dark-blue);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--intel-dark-blue);
+  box-shadow: 0 4px 16px rgba(0,113,197,0.15);
+  transform: scale(1.04, 1.04); /* Slightly enlarge on hover */
+}
+
+/* Optional: Make images fit the card */
+.card img {
+  width: 250px; /* Set image width to 250px */
+  height: 100px; /* Set image height to 100px */
+  object-fit: cover; /* Crop image to fit the box */
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto 8px auto; /* Center image and add space below */
+}
+
+/* Overlay for the paragraph */
+.card .card-overlay {
+  /* Position overlay to cover the card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Semi-transparent background */
+  background: rgba(0, 113, 197, 0.95); /* Intel blue, mostly opaque */
+  color: var(--intel-white);
+  /* Center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Hide overlay by default */
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 1em;
+  border-radius: 8px;
+  z-index: 2;
+  
+}
+
+.card:hover .card-overlay {
+  /* Show overlay on hover */
+  opacity: 1;
+  
+}
+
+.card p {
+  /* Hide the original paragraph when overlay is shown */
+  position: relative;
+  z-index: 1;
+}
+
+.instructions {
+  /* Center the instructions text */
+  text-align: center;
+  /* Add some space around */
+  margin: 20px 0;
+  color: var(--intel-blue);
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .carousel {
+    flex-direction: column;
+    /* Remove horizontal scroll and snap for column layout */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0;
+  }
+  .card {
+    flex: 1 1 100%; /* Cards take full width */
+    min-width: 0; /* Remove min-width for stacking */
+    margin-right: 0;
+    margin-bottom: 16px; /* Add space between stacked cards */
+    max-width: 95vw;
+  }
+}
