@@ -15,7 +15,7 @@
 }
 
 body {
-  background: #F4F4F4;
+  background: var(--intel-light-blue);
   color: #222;
   font-family: Arial, sans-serif;
 }
@@ -66,7 +66,7 @@ header p {
 }
 
 /* Carousel container styles */
-.carousel {
+.customCarousel {
   /* Use flexbox to arrange cards in a row */
   display: flex;
   /* Allows horizontal scrolling if content is too wide */
@@ -84,7 +84,7 @@ header p {
 }
 
 /* Each card in the carousel */
-.card {
+.customCard {
   /* Flex item for flexbox */
   flex: 0 0 24.5%; /* Show 4 cards at a time (100% / 4 = 25%) */
   /* Add some space between cards */
@@ -113,14 +113,18 @@ header p {
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-.card:hover {
+.customCardText{
+  overflow: hidden;
+}
+
+.customCard:hover {
   border-color: var(--intel-dark-blue);
   box-shadow: 0 4px 16px rgba(0,113,197,0.15);
   transform: scale(1.04, 1.04); /* Slightly enlarge on hover */
 }
 
 /* Optional: Make images fit the card */
-.card img {
+.customCard img {
   width: 250px; /* Set image width to 250px */
   height: 100px; /* Set image height to 100px */
   object-fit: cover; /* Crop image to fit the box */
@@ -130,7 +134,7 @@ header p {
 }
 
 /* Overlay for the paragraph */
-.card .card-overlay {
+.customCard .customCard-overlay {
   /* Position overlay to cover the card */
   position: absolute;
   top: 0;
@@ -156,13 +160,13 @@ header p {
   
 }
 
-.card:hover .card-overlay {
+.customCard:hover .customCard-overlay {
   /* Show overlay on hover */
   opacity: 1;
   
 }
 
-.card p {
+.customCard p {
   /* Hide the original paragraph when overlay is shown */
   position: relative;
   z-index: 1;
@@ -230,14 +234,14 @@ footer .text-muted {
 
 /* Responsive: Stack cards vertically on small screens */
 @media (max-width: 700px) {
-  .carousel {
+  .customCarousel {
     flex-direction: column;
     /* Remove horizontal scroll and snap for column layout */
     overflow-x: visible;
     scroll-snap-type: none;
     padding: 0;
   }
-  .card {
+  .customCard {
     flex: 1 1 100%; /* Cards take full width */
     min-width: 0; /* Remove min-width for stacking */
     margin-right: 0;
