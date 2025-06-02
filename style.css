@@ -15,8 +15,8 @@
 }
 
 body {
-  background: var(--intel-light-blue);
-  color: var(--intel-dark-blue);
+  background: #F4F4F4;
+  color: #222;
   font-family: Arial, sans-serif;
 }
 
@@ -25,7 +25,7 @@ header {
   /* Use a blue gradient for Intel branding */
   background: linear-gradient(70deg, #00aee6 0%, #0c5b97 100%);
   color: var(--intel-white);
-  padding: 30px 0 30px 0;
+  padding: 30px 0 2rem 0; /* Adds space below the header only */
   text-align: center;
   font-size: 1.4em;
   
@@ -77,9 +77,9 @@ header p {
   padding-bottom: 10px;
   /* Enable scroll snap for smooth card snapping */
   scroll-snap-type: x mandatory;
-  background: var(--intel-gray);
-  border-radius: 12px;
-  padding: 20px 0 20px 10px;
+  background: #F4F4F4;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Each card in the carousel */
@@ -177,6 +177,44 @@ header p {
   margin-top: 16px;
 }
 
+/* 3-Column Content Section */
+section .container {
+  background: #F4F4F4;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+section .row h2 {
+  color: #0071C5;
+}
+section .row p {
+  color: #222;
+}
+.btn-primary {
+  background-color: #0071C5;
+  border-color: #0071C5;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #005a99;
+  border-color: #005a99;
+}
+
+/* Footer styling */
+footer.bg-light {
+  background: #0071C5 !important;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #F4F4F4;
+}
+footer .text-muted {
+  color: #F4F4F4 !important;
+}
+
 /* Responsive: Stack cards vertically on small screens */
 @media (max-width: 700px) {
   .carousel {
@@ -193,4 +231,13 @@ header p {
     margin-bottom: 16px; /* Add space between stacked cards */
     max-width: 95vw;
   }
+}
+
+/* For better contrast on modal */
+.modal-content {
+  background: #F4F4F4;
+  color: #222;
+}
+.modal-header, .modal-footer {
+  border: none;
 }
