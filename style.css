@@ -71,6 +71,7 @@ header p {
   display: flex;
   /* Allows horizontal scrolling if content is too wide */
   overflow-x: auto;
+  padding-top: 10px;
   /* Adds some space below the carousel */
   margin-bottom: 20px;
   /* Adds a little padding for better look */
@@ -193,10 +194,22 @@ section .row p {
 .btn-primary {
   background-color: #0071C5;
   border-color: #0071C5;
+  color: #fff;
 }
 .btn-primary:hover, .btn-primary:focus {
   background-color: #005a99;
   border-color: #005a99;
+  color: #fff;
+}
+.btn-secondary {
+  background-color: #222;
+  border-color: #222;
+  color: #fff;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #444;
+  border-color: #444;
+  color: #fff;
 }
 
 /* Footer styling */

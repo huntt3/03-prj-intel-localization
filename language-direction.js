@@ -15,14 +15,21 @@
     });
   }
 
-  // Function to update dir attribute based on lang
+  // Function to update dir attribute and Bootstrap classes based on lang
   function updateDir() {
     var html = document.documentElement;
+    var body = document.body;
     var lang = html.getAttribute('lang') || navigator.language || '';
-    if (isRtl(lang)) {
-      html.setAttribute('dir', 'rtl');
+    var isRtlLang = isRtl(lang);
+    // Set dir attribute
+    html.setAttribute('dir', isRtlLang ? 'rtl' : 'ltr');
+    // Add or remove Bootstrap RTL class on body
+    if (isRtlLang) {
+      body.classList.add('rtl');
+      body.classList.remove('ltr');
     } else {
-      html.setAttribute('dir', 'ltr');
+      body.classList.remove('rtl');
+      body.classList.add('ltr');
     }
   }
 
