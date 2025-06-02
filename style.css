@@ -117,6 +117,38 @@ header p {
   overflow: hidden;
 }
 
+/* Prevent text in .customCard from wrapping onto new lines */
+.customCard h2,
+.customCard h3,
+.customCard p,
+.customCard .customCardText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.8em;
+}
+
+@media (max-width: 1200px) {
+  .customCard h2, .customCard h3, .customCard p, .customCard .customCardText {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 900px) {
+  .customCard h2, .customCard h3, .customCard p, .customCard .customCardText {
+    font-size: 0.95em;
+  }
+}
+@media (max-width: 700px) {
+  .customCard h2, .customCard h3, .customCard p, .customCard .customCardText {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 500px) {
+  .customCard h2, .customCard h3, .customCard p, .customCard .customCardText {
+    font-size: 0.8em;
+  }
+}
+
 .customCard:hover {
   border-color: var(--intel-dark-blue);
   box-shadow: 0 4px 16px rgba(0,113,197,0.15);
